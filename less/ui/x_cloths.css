@@ -1,0 +1,25 @@
+a{color:#337ab7;text-decoration:none;}
+a:hover,
+a:focus{color:#23527c;text-decoration:underline;}
+a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+
+/*标题*/
+h1,
+.h1{font-size:36px;}
+h2,
+.h2{font-size:30px;}
+h3,
+.h3{font-size:24px;}
+h4,
+.h4{font-size:18px;}
+h5,
+.h5{font-size:14px;}
+h6,
+.h6{font-size:12px;}
+
+/*文本类*/
+/*文本位置*/
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+.text-center{text-align:center;}
+

@@ -1,0 +1,35 @@
+function detectBrowser() {
+		var explorer = window.navigator.userAgent.toLowerCase() ;
+		//ie
+		if (explorer.indexOf("msie") >= 0) {
+			return "IEä¯ÀÀÆ÷";
+		}
+		//ie¸ß°æ±¾
+		if (explorer.indexOf("trident") >= 0) {
+			return "IEä¯ÀÀÆ÷";
+		}
+		//Edge
+		if (explorer.indexOf("edge") >= 0) {
+			return "Edgeä¯ÀÀÆ÷";
+		}
+		//firefox
+		else if (explorer.indexOf("firefox") >= 0) {
+			return "»ğºüä¯ÀÀÆ÷";
+		}
+		//QQBrowser
+		else if(explorer.indexOf("qqbrowser") >= 0){
+			return "QQä¯ÀÀÆ÷";
+		}
+		//Chrome
+		else if(explorer.indexOf("chrome") >= 0){
+			return "¹È¸èChromeä¯ÀÀÆ÷";
+		}
+		//Opera
+		else if(explorer.indexOf("opera") >= 0){
+			return "Å·Åóä¯ÀÀÆ÷";
+		}
+		//Safari
+		else if(explorer.indexOf("safari") >= 0){
+			return "Safariä¯ÀÀÆ÷";
+		}
+	}

@@ -1,0 +1,83 @@
+/**
+*  time:2017-12-3 14:42
+*  author:seo_xiao
+*  description:
+*
+*/
+
+//圆角
+.border-radius (@radius: 3px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+//自定义圆角
+.border-radius-custom (@topleft: 3px, @topright: 3px, @bottomleft: 3px, @bottomright: 3px) {
+  -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+  -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+  border-radius: @topleft @topright @bottomright @bottomleft;
+}
+//阴影
+.box-shadow (@x: 0px, @y: 3px, @blur: 5px, @color: rgba(0,0,0,0.5)) {
+  -webkit-box-shadow: @x @y @blur @color;
+  -moz-box-shadow: @x @y @blur @color;
+  box-shadow: @x @y @blur @color;
+}
+//过渡
+.transition (@prop: all, @time: 1s, @ease: linear) {
+  -webkit-transition: @prop @time @ease;
+  -moz-transition: @prop @time @ease;
+  -o-transition: @prop @time @ease;
+  -ms-transition: @prop @time @ease;
+  transition: @prop @time @ease;
+}
+//转换-旋转
+.rotate (@rotate: 90deg) {
+  -webkit-transform: rotate(@rotate);
+  -moz-transform: rotate(@rotate);
+  -o-transform: rotate(@rotate);
+  -ms-transform: rotate(@rotate);
+  transform: rotate(@rotate);
+}
+//转换-缩放
+.scale (@scale: 1) {
+  -webkit-transform: scale(@scale);
+  -moz-transform: scale(@scale);
+  -o-transform: scale(@scale);
+  -ms-transform: scale(@scale);
+  transform: scale(@scale);
+}
+//转换-扭曲
+.skew (@skew: 1deg) {
+  -webkit-transform: skew(@skew);
+  -moz-transform: skew(@skew);
+  -o-transform: skew(@skew);
+  -ms-transform: skew(@skew);
+  transform: skew(@skew);
+}
+//转换-平移
+.translate (@translate: 10px) {
+  -webkit-transform: translate(@translate);
+  -moz-transform: translate(@translate);
+  -o-transform: translate(@translate);
+  -ms-transform: translate(@translate);
+  transform: translate(@translate);
+}
+// 双色渐变
+.gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+  background-color: @start;
+  background-image: -webkit-linear-gradient(@origin, @start, @stop);
+  background-image: -moz-linear-gradient(@origin, @start, @stop);
+  background-image: -o-linear-gradient(@origin, @start, @stop);
+  background-image: -ms-linear-gradient(@origin, @start, @stop);
+  background-image: linear-gradient(@origin, @start, @stop);
+}
+
+.yy{
+  .border-radius();
+  .box-shadow();
+  .transition();
+  .translate();
+  .gradient();
+}
+

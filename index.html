@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="./js/jquery-3.2.1.js"></script>
+    <script src="./js/aslide.min.js"></script>
+    <style>
+        .ny-slider {
+            float: left;
+            position: relative;
+            width: 620px;
+            height: 36px;
+            margin: 8px 0 16px 0;
+            border: 1px solid #ddd;
+            border-left: none;
+            background-color: #fff;
+            border-radius: 2px;
+        }
+
+        .ny-slider-item {
+            box-sizing: border-box;
+            float: left;
+            line-height: 34px;
+            border-left: 1px solid #ddd;
+            text-align: right;
+            cursor: pointer;
+        }
+        .ny-slider-item:first-child {
+            border-left: none;
+        }
+        .slider-item-number {
+            font-size: 12px;
+            color: #999;
+            height: 20px;
+            margin-right: 8px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .ny-slider-range {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 36px;
+            /*padding: 0 8px;*/
+            overflow: hidden;
+            background-color: #00aaff;
+            transition: width 0.1s;
+            -webkit-transition: width 0.1s;
+            border: 1px solid #00aaff;
+            border-right: none;
+            border-radius: 2px 0 0 2px;
+            margin-top: -1px;
+        }
+        .ny-slider-item-box {
+            width: 604px;
+        }
+        .ny-slider-range-current {
+            width: 624px;
+        }
+        .ny-slider-range-item {
+            box-sizing: border-box;
+            float: left;
+            height: 34px;
+            text-align: right;
+            border-right: 1px solid #0096e0;
+            cursor: pointer;
+        }
+        .ny-slider-range-item:last-child {
+            border-right: none;
+        }
+        .range-item-number {
+            float: right;
+            font-size: 12px;
+            color: #fff;
+            height: 34px;
+            margin-right: 8px;
+            line-height: 34px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .ny-slider-btn {
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 20px;
+            height: 40px;
+            background: blue;
+            cursor: pointer;
+            z-index: 3;
+            transition: left 0.1s;
+            -webkit-transition: left 0.1s;
+        }
+        .ny-slider + .ny-number-container {
+            margin-left: 24px;
+        }
+        .ny-slider-box .number-input-box input {
+            height: 34px;
+            line-height: 34px;
+        }
+        .ny-slider-box .ny-number-control {
+            height: 36px;
+        }
+        .ny-slider-box .ny-number-control span {
+            height: 18px;
+        }
+
+        path {
+            -webkit-animation: dash_title 3s linear forwards;
+            -moz-animation: dash_title 3s linear forwards;
+            animation: dash_title 3s linear forwards;
+        }
+
+        @keyframes dash_title {
+            0% {
+                stroke-dashoffset: 394.06201171875;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @-webkit-keyframes dash_title {
+            0% {
+                stroke-dashoffset: 394.06201171875;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        -webkit-animation: bubble-animate-3 linear 11s infinite;
+        -moz-animation: bubble-animate-3 linear 11s infinite;
+        -o-animation: bubble-animate-3 linear 11s infinite;
+        animation: bubble-animate-3 linear 11s infinite;
+
+
+
+    </style>
+</head>
+<body>
+<div class="ny-slider" id="NYslider">
+    <div class="ny-slider-item-box"></div>
+    <div class="ny-slider-range">
+        <div class="ny-slider-range-current"></div>
+    </div>
+    <div class="ny-slider-btn" data-w="500"></div>
+</div>
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="291px" height="70px" viewBox="0 0 291 70" enable-background="new 0 0 291 70" xml:space="preserve">
+<path fill-rule="evenodd" clip-rule="evenodd" fill="none" stroke="#000000" stroke-width="2" stroke-dasharray="394.06201171875" d="M25,54.531H8V11h274v43.531h-16"/>
+</svg>
+<script>
+    $(function () {
+        var i = {
+            step: 1,
+            defaultVal: 10,
+            min: 1,
+            max: 200,
+            value: [10, 50, 100],
+            width: [50, 25, 25],
+            unit: "个",
+            maxwidth: 624,
+            callback: function(t) {
+                    console.log(t)
+            },
+            onceCall: function(t) {
+                console.log('1',t)
+
+            }
+        };
+        var n = new NYdrag("NYslider",i);
+
+        n.init();
+    })
+
+    var path = document.querySelector('path');
+    var length = path.getTotalLength();
+
+    console.log(length)
+
+</script>
+</body>
+</html>

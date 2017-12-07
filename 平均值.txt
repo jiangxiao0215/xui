@@ -1,0 +1,8 @@
+// 求平局值方法
+	var getArrayAvgValue = function (array) {
+		var result = 0;
+		for(var i = 0; i < array.length; i++) {
+			result += array[i];
+		}
+		return (result / array.length).toFixed(2)
+	};
